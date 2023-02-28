@@ -27,22 +27,53 @@ The structure of Quarto websites is actually nearly identical to that of R Proje
 Go to File -\> New Project -\> New Directory -\> Quarto Website. Name is important here, as it will eventually become the slug (i.e., URL) for your site when we host it with GitHub Pages. Since this is a demo, I will call it 'website-demo'.
 
 ::: {.alert .alert-info}
-If you already know you want this to be your personal website, name it your GitHub username. GitHub Pages creates websites with the github.io suffix, and allow you one URL with your username (i.e., username.github.io), which is likely the preferred URL you would want to give your personal site.
+If you already know you want this to be your personal website, **name it your GitHub username**. GitHub Pages creates websites with the **github.io** suffix, and allow you one URL with your username (i.e., **username.github.io**), which is likely the preferred URL you would want to give your personal site.
 :::
 
-## Running Code
+Leave all the other defaults in the Create Website menu. Once you create the site, you will now notice you are working in an R Project with the site name you just gave it, and see four files in your project directory (*We will get back to these later*).
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Connect to GitHub
 
-```{r}
-1 + 1
-```
+We now have a Quarto website project, but it is not yet linked to GitHub (which we will need to host the site). Let's explore a new package here called `usethis` which assists in project workflow management. With this package we can actually create a GitHub repo from an R project (instead of the usual method of creating a repo first and then creating a project).
 
-You can add options to executable code like this
+If you haven't yet, install the package:
 
 ```{r}
-#| echo: false
-2 * 2
+install.packages("usethis")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed). 😃
+Then, in the console run the follow line of code. It will prompt you if you want to commit all your files, say Yup. It will then ask if you want to Restart R, say "Absolutely", and click 'Yes' to restart even if prompted that the session is busy.
+
+```{r}
+usethis::use_git()
+```
+
+You will now notice the 'Git' tab in RStudio, meaning it is connected to Git now, however we haven't synced this to your personal (remote) GitHub repo. To do so, next run this line of code in the console:
+
+```{r}
+usethis::use_github()
+```
+
+## Configure and Publish with GitHub Pages
+
+First there are some mandatory configurations to set in order to publish with GitHub Pages.
+
+1.  Create a file named `.nojekyll` . Spelling is important! Also note that this creates an empty file that will be hidden in your file directory but it will show up as an untracked file in Git. Open your **terminal** and run the following:
+
+    ```{r}
+    touch .nojekyll
+    ```
+
+2.  In the YAML header in the `_quarto.yml` file set the `output-dir` to "docs" like this in the first 'project' section at the top under `type: website` :
+
+    ```{r}
+    project:
+      type: website
+      output-dir: docs
+    ```
+
+3.  
+
+## Acknowledgements
+
+Thanks to other blogs and Quarto documentation that helped guide this lesson plan, particularly [this wonderful blog](https://ucsb-meds.github.io/creating-quarto-websites/) by Sam Csik.
