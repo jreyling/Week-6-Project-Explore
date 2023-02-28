@@ -6,6 +6,16 @@ This repo contains lesson plans that allow you to demo and explore the various o
 
 ## Resources
 
+**R Markdown:**
+
+-   [R Markdown Gallery](https://rmarkdown.rstudio.com/gallery.html) - View the range of outputs and formats you can create
+-   [R Markdown Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/main/rmarkdown-2.0.pdf) - Common R Markdown syntax examples
+
+**Bookdown:**
+
+-   [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+-   [Cookbook for Bookdown](https://rstudio4edu.github.io/rstudio4edu-book/intro-bookdown.html)
+
 **R Shiny:**
 
 -   [Shiny Tutorials](https://shiny.rstudio.com/tutorial/)
@@ -23,14 +33,6 @@ This repo contains lesson plans that allow you to demo and explore the various o
 -   [Creating a personal website in Quarto](https://ucsb-meds.github.io/creating-quarto-websites/)
 
 -   [Create a blog with Quarto](https://beamilz.com/posts/2022-06-05-creating-a-blog-with-quarto/en/)
-
-**R Markdown:**
-
--   [R Markdown Gallery](https://rmarkdown.rstudio.com/gallery.html) - View the range of outputs and formats you can create
-
-**Bookdown:**
-
--   [Cookbook for Bookdown](https://rstudio4edu.github.io/rstudio4edu-book/intro-bookdown.html)
 
 ## Material
 
