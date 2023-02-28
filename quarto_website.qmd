@@ -22,11 +22,13 @@ There are plenty of R-based options to create a personal website such as `blogdo
 
 ## Getting Started
 
-The structure of Quarto websites is actually nearly identical to that of R Projects (and they actually create an .Rproj file when you create the website). That being said, we want to link this to a GitHub repository so let's **create that repo first.**
+The structure of Quarto websites is actually nearly identical to that of R Projects (and they actually create an .Rproj file when you create the website). Let's get started:
 
-In your personal GitHub account create a new repository and call it something like "website-demo". Keep all the other defaults as-is. Then copy the HTTPS link (or SSH if you set up an SSH key).
+Go to File -\> New Project -\> New Directory -\> Quarto Website. Name is important here, as it will eventually become the slug (i.e., URL) for your site when we host it with GitHub Pages. Since this is a demo, I will call it 'website-demo'.
 
-Next, go to File -\> New Project -\>
+::: {.alert .alert-info}
+If you already know you want this to be your personal website, name it your GitHub username. GitHub Pages creates websites with the github.io suffix, and allow you one URL with your username (i.e., username.github.io), which is likely the preferred URL you would want to give your personal site.
+:::
 
 ## Running Code
 
