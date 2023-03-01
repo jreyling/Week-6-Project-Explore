@@ -99,7 +99,7 @@ load("shinyDemoData.RData")
 tmap_mode("view")
 ```
 
-### Define the `ui` 
+### Define the `ui`
 
 Lets keep the same layout as the template `app.R` script, with a fluid page with a title panel, followed by a sidebar layout with a main panel (our map) and a side panel (user inputs). You can learn more about different layout options [here](https://shiny.rstudio.com/articles/layout-guide.html).
 
@@ -214,6 +214,8 @@ server <- function(input, output){
   
 }
 ```
+
+![](www/shinyPreview.png)
 
 ### Sharing your application
 

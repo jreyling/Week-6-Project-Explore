@@ -17,12 +17,14 @@ document! Therefore your knowledge of R Markdown is easily transferable
 to Quarto.
 
 <figure>
-<img src="www/quarto.png" data-fig-align="center" width="446"
+<img src="www/quarto.png" data-fig-align="center" width="559"
 alt="Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst." />
 <figcaption aria-hidden="true">Artwork from “Hello, Quarto” keynote by
 Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference
 2022. Illustrated by Allison Horst.</figcaption>
 </figure>
+
+<br>
 
 <div class="alert alert-info">
 
@@ -281,6 +283,13 @@ Once you have edited your site to your liking, remember to 1) Render
 Website and then 2) Push all changes to GitHub. Your site will update
 after a minute or so, and you can carry out this process whenever you
 want to edit or update your site.
+
+### My Website Demo
+
+If you’d like to see the website I created for this demonstration, its
+live at: <https://ccmothes.github.io/website-demo/>
+
+![](www/kona-website.png)
 
 ## Acknowledgements
 

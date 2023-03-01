@@ -12,7 +12,9 @@ Quarto is a publishing system that allows you to weave together content and exec
 
 You may notice if you open this lesson in in R Studio, while it is a .qmd document it looks and functions nearly identical to a .Rmd document! Therefore your knowledge of R Markdown is easily transferable to Quarto.
 
-![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](www/quarto.png){fig-align="center" width="446"}
+![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](www/quarto.png){fig-align="center" width="559"}
+
+<br>
 
 ::: {.alert .alert-info}
 Quarto operates as a stand-alone software, however with RStudio v2022.07.1 + Quarto is included, therefore there is no need to separately install Quarto if you have the latest version of RStudio.
@@ -175,6 +177,12 @@ Lastly, you likely want to have more choice in the aesthetics of your site. You 
 ## Finalize your site
 
 Once you have edited your site to your liking, remember to 1) Render Website and then 2) Push all changes to GitHub. Your site will update after a minute or so, and you can carry out this process whenever you want to edit or update your site.
+
+### My Website Demo
+
+If you'd like to see the website I created for this demonstration, its live at: <https://ccmothes.github.io/website-demo/>
+
+![](www/kona-website.png)
 
 ## Acknowledgements
 
