@@ -91,6 +91,7 @@ Now lets set up our app script by loading necessary libraries and data sets. Put
 library(tmap)
 library(sf)
 library(dplyr)
+library(shiny)
 
 # read in data
 load("shinyDemoData.RData")
