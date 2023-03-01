@@ -1,7 +1,7 @@
 Shiny Demo
 ================
 Caitlin Mothes
-2023-02-28
+2023-03-01
 
 ## Shiny Demo
 
@@ -285,6 +285,8 @@ server <- function(input, output){
   
 }
 ```
+
+![](www/shinyPreview.png)
 
 ### Sharing your application
 
