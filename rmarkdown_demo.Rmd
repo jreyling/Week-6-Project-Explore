@@ -1,10 +1,7 @@
 ---
 title: "Fancy R Markdown"
 output: 
-  html_document:
-    theme: default
-    toc: true
-    toc_float: true
+  github_document
 date: "`r Sys.Date()`"
 ---
 
@@ -74,12 +71,14 @@ With this R markdown document, I suggest switching between **Source** and **Visu
 
 You can embed an R code chunk like this:
 
-```{r code_ex}
+```{r code_ex, eval = FALSE}
 # code block comments with #
 x <- 1:10
 y <- x^2
 plot(x, y)
 ```
+
+## ![](www/code_ex-1.png)
 
 ## Customizing Code Chunk Output
 

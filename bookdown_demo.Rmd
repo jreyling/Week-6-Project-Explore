@@ -2,7 +2,7 @@
 title: "Bookdown"
 author: "Katie Willi and Caitlin Mothes"
 date: "2023-02-27"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

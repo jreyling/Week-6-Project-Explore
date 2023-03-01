@@ -1,0 +1,173 @@
+Bookdown
+================
+Katie Willi and Caitlin Mothes
+2023-02-27
+
+# Using `bookdown`
+
+Put simply, R’s `bookdown` package is a tool for stitching together
+multiple R Markdown files into a whole book. A typical `bookdown` book
+contains multiple *chapters*; where each *chapter* lives in its own R
+Markdown file. Hundreds of examples of `bookdown` documents exist, but
+`bookdown`’s \[official website\] (<https://bookdown.org/>) is a great
+starting point to explore some good ones.
+
+There are several benefits of making `bookdown` documents as opposed to,
+say, a Microsoft Word document:
+
+**Integration of code and text:** `bookdown` allows you to write code
+and text together in a single document. This makes it easy to include
+code examples, data visualizations, and other dynamic content alongside
+your written text.
+
+**Reproducibility:** `bookdown` documents are designed to be
+reproducible, meaning that anyone who has access to the document can
+reproduce the results and figures that you’ve generated. This is because
+`bookdown` documents often include the R code that was used to generate
+the results, making it easy to see how the results were produced.
+
+**Flexibility:** `bookdown` provides a lot of flexibility in terms of
+formatting and output options. You can create PDFs, HTML documents,
+e-books, and more, and you can customize the formatting and appearance
+of your document using a variety of built-in templates and themes.
+
+**Collaboration:** Because `bookdown` documents are plain text files,
+they can easily be shared and collaborated on using GitHub. This makes
+it easy to work on a book with multiple authors or contributors, and to
+track changes and revisions over time.
+
+**Scalability:** `bookdown` can be used to create small documents like
+reports and tutorials, as well as larger documents like books and
+dissertations. This means that `bookdown` can be used for a wide range
+of projects, from small data analysis projects to full-length books.
+
+## Making a `bookdown`
+
+In this lesson we will set up a simple `bookdown` using some of the R
+markdowns we have already made for this class as a starting point, then
+publish that document online with GitHub pages. For an example of this
+lesson’s final outcome, see
+<https://kathryn-willi.github.io/my_bookdown/>.
+
+### 1) Install `bookdown`.
+
+``` r
+# stable version on CRAN
+install.packages("bookdown")
+```
+
+### 2) Create a repository for your bookdown.
+
+In Github, create a new repository. Call it “bookdown_demo”. Clone this
+repository onto your local system.
+
+### 3) Create the `index.Rmd` file.
+
+Once you’ve loaded the empty repository onto your computer, create a new
+R Markdown file by selecting New File -\> R Markdown. Name this file
+**“My Bookdown”**, or whatever you fancy. This will be the title of your
+`bookdown` document. Save this new .Rmd file as “index.RMD” (be sure
+that it is saved in your **bookdown_demo** repository). This index file
+serves as the main entry point to your bookdown document, and will
+contain the YAML metadata for the entire bookdown document. Though there
+are many metadata options you can include for your bookdown, these are
+the important ones that let R know that the output for this repo is
+going to be a `bookdown` document, that we plan to host on GitHub:
+
+``` r
+---
+title: "My Bookdown"
+author: "YOUR NAME"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+description: "This is an example of using the bookdown package. The output format for this example is bookdown::gitbook."
+---
+```
+
+### 4) Add a `bookdown` introduction to the index.
+
+Each R Markdown file must start immediately with the chapter title using
+the first-level heading, e.g., `# Chapter Title`. For this first
+`index.Rmd` page, however, we do not want it to be labelled as a
+chapter. To exclude any header from being listed as a chapter, you can
+add `{-}` after the title. In our example and below the YAML metadata,
+create a non-chapter header called “My Intro”, and write some
+introductory text below it:
+
+``` r
+# My Intro {-}
+
+This is my example of a bookdown document. Blah blah blah.
+```
+
+Save then exit out of `index.RMD`.
+
+### 5) Add chapters to your bookdown.
+
+A typical `bookdown` book contains multiple chapters, with each chapter
+housed in its own R Markdown file. As mentioned previously, each R
+Markdown file must start immediately with the chapter title using the
+first-level heading (i.e. `# CHAPTER TITLE`). Only use the first-level
+heading at the beginning of each chapter. Let’s go ahead and copy and
+paste each of the .Rmd files from your *Week-3-APIs-and_Iteration* into
+our **bookdown_demo** repository. Next, remove each of their YAML
+headers, and give each one a chapter name. Ensure that there are no
+additional first-level headers in the Rmds. Save and exit out of each
+RMD.
+
+### 6) Select the order of chapters by their names.
+
+Depending on how your *Week-3-APIs-and-Iteration* Rmds are currently
+named, you might need to rename them. Bookdown automatically orders
+chapters alphanumerically. To rename files in R, go to the Files control
+pane, tick the file of interest’s box, then select “Rename”.
+
+### 7) Create a `_bookdown.yml` YAML file.
+
+The `bookdown.yml` file is a configuration file used in bookdown
+projects. Its purpose is to define various settings and options for
+building the book, such as the name of the final bookdown file, where it
+gets saved, and other customizations. To create the `_bookdown.yml`
+file, go to the *Files* control pane -\> *New Blank File* -\> Text File.
+Name it `_bookdown.yml`. Then, copy and paste the following options into
+the file:
+
+``` r
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs" #for github pages to find it
+```
+
+### 8) “Knit” your `bookdown`.
+
+In your **bookdown_demo** project console, run the following line of
+code:
+
+``` r
+bookdown::render_book()
+```
+
+Your Rmds have now been knit, stored, and configured in a `docs` folder.
+
+### 9) Commit and push **bookdown_demo**.
+
+### 10) Publish your `bookdown` document on GitHub Pages.
+
+GitHub Pages is a free web hosting service provided by GitHub that
+allows users to host websites directly from their GitHub repositories.
+These websites can be populated by a myriad of R products, including
+`bookdown` documents. To publish your newly-created `bookdown`, first go
+to your **bookdown_demo** repository on GitHub. Got to the **Settings**
+tab, then find **Pages**. Under the **Source** dropdown, select **Deploy
+from a branch**. Under the **Branch** dropdown, choose **main** and
+**/docs**. This tells GitHub where your `bookdown` files are located in
+your repo. (Remember, we explicitly listed in our YAML file that we
+wanted our output directory to be **docs**.)
+
+Once these have been saved, GitHub will begin building your website.
+This can take a while depending on how big the website being created is.
+If you refresh GitHub Pages webpage, it will show the hyperlink to your
+new website.
